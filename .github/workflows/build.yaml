@@ -25,11 +25,11 @@ jobs:
           push: true
           pull: true
           tags: |
-            ghcr.io/${{ github.repository }}:1.${{ github.run_number }}
-            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/elevate08/cups-gutenprint:1.${{ github.run_number }}
+            ghcr.io/elevate08/cups-gutenprint:latest
       - name: smoke test
         run: |
-          docker run --rm --entrypoint sh ghcr.io/${{ github.repository }}:1.${{ github.run_number }} -c '
+          docker run --rm --entrypoint sh ghcr.io/elevate08/cups-gutenprint:1.${{ github.run_number }} -c '
             cupsd && sleep 3
             echo "gutenprint models: $(lpinfo -m | grep -c gutenprint)"
             lpinfo -m | grep -i "mp495" || true
