@@ -34,4 +34,6 @@ jobs:
             echo "gutenprint models: $(lpinfo -m | grep -c gutenprint)"
             lpinfo -m | grep -i "mp495" || true
             ls /usr/lib/cups/backend/
-            test "$(lpinfo -m | grep -c gutenprint)" -gt 100'
+            test "$(lpinfo -m | grep -c gutenprint)" -gt 100
+            airsaned --help | head -3
+            scanimage --version'
